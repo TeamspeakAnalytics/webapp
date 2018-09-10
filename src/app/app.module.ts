@@ -8,16 +8,20 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {
   MatButtonModule,
   MatCardModule,
+  MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatMenuModule,
+  MatProgressSpinnerModule,
   MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
 import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -45,7 +49,11 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,8 +2,20 @@
   height: 100%;
 }
 
-.sidenav {
-  width: 200px;
+#toolbar {
+  background: white;
+  border-bottom: solid #E0E0E0 1px;
+  color: #757575;
+}
+
+#drawer-toolbar {
+  background: white;
+  color: #757575;
+}
+
+.menu-icon {
+  margin-right: 20px;
+  color: #CDCDCD;
 }
 
 .mat-toolbar.mat-primary {
@@ -12,15 +24,24 @@
 }
 
 #content-wrapper {
-  padding: 4px;
+  padding: 8px;
   overflow: auto;
   height: calc(100% - 64px);
   margin: 0;
   min-height: calc(100% - 64px);
   min-width: 100%;
   width: 100%;
+  background: white;
 }
 
 .active {
   font-weight: bold;
+}
+
+#search {
+  width: 720px;
+
+  mat-form-field {
+    width: 100%;
+  }
 }

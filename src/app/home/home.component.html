@@ -1,1 +1,11 @@
-<p>Home Page</p>
+<div id="wrapper" fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center">
+  <mat-card class="standard-card" fxLayout="column" fxLayoutAlign="center center">
+    <mat-spinner *ngIf="!serverInfo"></mat-spinner>
+    <ng-container *ngIf="serverInfo">
+      <mat-card-title>{{serverInfo.name}}</mat-card-title>
+      <mat-card-content>
+        Content
+      </mat-card-content>
+    </ng-container>
+  </mat-card>
+</div>

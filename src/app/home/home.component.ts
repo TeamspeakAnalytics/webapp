@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ServerService} from '../services/server.service';
+import {GetServerListInfo} from '../models/getServerListInfo';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,10 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {
+  serverInfo: GetServerListInfo;
+
+  constructor(private serverService: ServerService) {
+    serverService.getServerInfo().subscribe(info => this.serverInfo = info);
   }
 
   ngOnInit() {
