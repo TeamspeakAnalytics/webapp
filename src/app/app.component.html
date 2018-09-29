@@ -9,7 +9,11 @@
       <span>Teamspeak Analytics</span>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/home" routerLinkActive="active" (click)="drawer.close()">
+      <a mat-list-item routerLink="/login" routerLinkActive="active" (click)="drawer.close()">
+        <mat-icon class="menu-icon">input</mat-icon>
+        <span>Login</span>
+      </a>
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active" (click)="drawer.close()">
         <mat-icon class="menu-icon">dashboard</mat-icon>
         <span>Home</span>
       </a>
@@ -46,8 +50,11 @@
 
     </mat-toolbar>
     <!-- CONTENT -->
-    <div id="content-wrapper">
-      <router-outlet></router-outlet>
+    <div id="wrapper" fxLayout="row" fxLayoutAlign="start start">
+      <app-quick-access [items]="quickAccessItems"></app-quick-access>
+      <div id="content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
     </div>
 
   </mat-sidenav-content>

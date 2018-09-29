@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HomeComponent} from './home/home.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
   MatButtonModule,
@@ -22,10 +22,12 @@ import {LayoutModule} from '@angular/cdk/layout';
 import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {HttpClientModule} from '@angular/common/http';
+import { QuickAccessComponent } from './quick-access/quick-access.component';
+import { QuickAccessButtonComponent } from './quick-access/quick-access-button/quick-access-button.component';
 
 const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: '', pathMatch: 'full', redirectTo: '/home'},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: '', pathMatch: 'full', redirectTo: '/dashboard'},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -33,8 +35,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    NotFoundComponent
+    DashboardComponent,
+    NotFoundComponent,
+    QuickAccessComponent,
+    QuickAccessButtonComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+@import "~src/styles";
+
+#wrapper {
+  width: 100px;
+  color: $gray-text;
+  &:first-child {
+    margin-top: 12px;
+  }
+}
+
+.active {
+  color: $active-color;
+}
+
+.quick-btn{
+  transition: color 0.5s;
+}

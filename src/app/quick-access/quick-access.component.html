@@ -1,0 +1,10 @@
+<div id="wrapper" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="12px">
+  <app-quick-access-button *ngFor="let item of items"
+                           [fontIcon]="item.icon"
+                           [routerLink]="item.routerLink"
+                           style="outline: 0;"
+                           class="quick-btn"
+                           routerLinkActive="active">
+    {{item.title}}
+  </app-quick-access-button>
+</div>

@@ -1,3 +1,5 @@
+@import "../styles";
+
 .sidenav-container {
   height: 100%;
 }
@@ -5,12 +7,12 @@
 #toolbar {
   background: white;
   border-bottom: solid #E0E0E0 1px;
-  color: #757575;
+  color: $gray-text;
 }
 
 #drawer-toolbar {
   background: white;
-  color: #757575;
+  color: $gray-text;
 }
 
 .menu-icon {
@@ -26,16 +28,32 @@
 #content-wrapper {
   padding: 8px;
   overflow: auto;
-  height: calc(100% - 64px);
+  //height: calc(100% - 64px);
+  height: 100%;
   margin: 0;
   min-height: calc(100% - 64px);
-  min-width: 100%;
   width: 100%;
   background: white;
 }
 
+#wrapper {
+  overflow: auto;
+  height: calc(100% - 64px);
+  margin: 0;
+  min-height: calc(100% - 64px);
+  background: white;
+
+  app-quick-access{
+    height:100%;
+  }
+}
+
 .active {
   font-weight: bold;
+  color: $active-color;
+  mat-icon {
+    color: $active-color;
+  }
 }
 
 #search {
