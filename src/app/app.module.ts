@@ -24,6 +24,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {HttpClientModule} from '@angular/common/http';
 import { QuickAccessComponent } from './quick-access/quick-access.component';
 import { QuickAccessButtonComponent } from './quick-access/quick-access-button/quick-access-button.component';
+import { MessageBoxComponent } from './message-box/message-box.component';
 
 const appRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     NotFoundComponent,
     QuickAccessComponent,
-    QuickAccessButtonComponent
+    QuickAccessButtonComponent,
+    MessageBoxComponent
   ],
   imports: [
     BrowserModule,

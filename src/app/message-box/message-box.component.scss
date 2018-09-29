@@ -1,0 +1,25 @@
+mat-icon{
+  margin-right: 12px;
+}
+
+h3{
+  font-weight: normal;
+}
+
+mat-card{
+
+  &.error{
+    background: #ff3019;
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+    background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 );
+  }
+  &.warning{
+    background: #ffa84c;
+    background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%);
+    background: -webkit-linear-gradient(top, #ffa84c 0%,#ff7b0d 100%);
+    background: linear-gradient(to bottom, #ffa84c 0%,#ff7b0d 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 );
+  }
+}

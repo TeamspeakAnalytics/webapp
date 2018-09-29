@@ -10,9 +10,11 @@ import {GetServerListInfo} from '../models/getServerListInfo';
 export class DashboardComponent implements OnInit {
 
   serverInfo: GetServerListInfo;
+  serviceIsAvailable = true;
 
   constructor(private serverService: ServerService) {
     serverService.getServerInfo().subscribe(info => this.serverInfo = info);
+    serverService.isAvailable.subscribe(isAvailable => this.serviceIsAvailable = isAvailable);
   }
 
   ngOnInit() {

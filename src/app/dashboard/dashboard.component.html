@@ -1,4 +1,5 @@
-<div id="wrapper" fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center">
+<app-message-box alertType="error" *ngIf="!serviceIsAvailable">The server service is currently not available!</app-message-box>
+<div id="wrapper" fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center" *ngIf="serviceIsAvailable">
   <mat-card class="standard-card" fxLayout="column" fxLayoutAlign="center center">
     <mat-spinner *ngIf="!serverInfo"></mat-spinner>
     <ng-container *ngIf="serverInfo">

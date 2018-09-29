@@ -1,0 +1,9 @@
+<mat-card [class.error]="alertType === 'error'" [class.warning]="alertType === 'warning'">
+  <mat-card-content>
+    <h3 fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon *ngIf="alertType == 'error'">error</mat-icon>
+      <mat-icon *ngIf="alertType == 'warning'">warning</mat-icon>
+      <ng-content></ng-content>
+    </h3>
+  </mat-card-content>
+</mat-card>
