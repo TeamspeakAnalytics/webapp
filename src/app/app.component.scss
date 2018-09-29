@@ -43,8 +43,8 @@
   min-height: calc(100% - 64px);
   background: white;
 
-  app-quick-access{
-    height:100%;
+  app-quick-access {
+    height: 100%;
   }
 }
 
@@ -62,4 +62,8 @@
   mat-form-field {
     width: 100%;
   }
+}
+
+.nav-list {
+  height: calc(100% - 64px);
 }

@@ -7,7 +7,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatDividerModule,
   MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
@@ -15,7 +15,7 @@ import {
   MatListModule,
   MatMenuModule,
   MatProgressSpinnerModule,
-  MatSidenavModule,
+  MatSidenavModule, MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
@@ -25,6 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { QuickAccessComponent } from './quick-access/quick-access.component';
 import { QuickAccessButtonComponent } from './quick-access/quick-access-button/quick-access-button.component';
 import { MessageBoxComponent } from './message-box/message-box.component';
+import { CardServerStatusComponent } from './dashboard/card-server-status/card-server-status.component';
 
 const appRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     NotFoundComponent,
     QuickAccessComponent,
     QuickAccessButtonComponent,
-    MessageBoxComponent
+    MessageBoxComponent,
+    CardServerStatusComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
