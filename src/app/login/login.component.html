@@ -1,0 +1,32 @@
+<div fxLayout="column" fxLayoutAlign="start center" fxFill>
+  <form (ngSubmit)="loginForm.checkValidity() && login()" #loginForm>
+    <mat-card>
+
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+
+
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput type="text" placeholder="Username" name="username" [(ngModel)]="username" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="password" required>
+        </mat-form-field>
+
+        <mat-checkbox name="stay" [(ngModel)]="stay">Stay logged in</mat-checkbox>
+
+
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxLayoutAlign="end center" fxLayout="row">
+          <button mat-flat-button color="secondary" type="button" routerLink="/register">Register</button>
+          <button mat-flat-button color="primary" type="submit">Login</button>
+        </div>
+      </mat-card-actions>
+
+    </mat-card>
+  </form>
+</div>

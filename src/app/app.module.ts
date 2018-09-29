@@ -7,7 +7,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
   MatButtonModule,
-  MatCardModule, MatDividerModule,
+  MatCardModule, MatCheckboxModule, MatDividerModule,
   MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
@@ -15,23 +15,19 @@ import {
   MatListModule,
   MatMenuModule,
   MatProgressSpinnerModule,
-  MatSidenavModule, MatTableModule,
+  MatSidenavModule, MatSnackBarModule, MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
-import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {HttpClientModule} from '@angular/common/http';
 import { QuickAccessComponent } from './quick-access/quick-access.component';
 import { QuickAccessButtonComponent } from './quick-access/quick-access-button/quick-access-button.component';
 import { MessageBoxComponent } from './message-box/message-box.component';
 import { CardServerStatusComponent } from './dashboard/card-server-status/card-server-status.component';
-
-const appRoutes: Routes = [
-  {path: 'dashboard', component: DashboardComponent},
-  {path: '', pathMatch: 'full', redirectTo: '/dashboard'},
-  {path: '**', component: NotFoundComponent}
-];
+import { LoginComponent } from './login/login.component';
+import {AppRoutingModule} from './app-routing.module';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -42,7 +38,8 @@ const appRoutes: Routes = [
     QuickAccessComponent,
     QuickAccessButtonComponent,
     MessageBoxComponent,
-    CardServerStatusComponent
+    CardServerStatusComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -57,13 +54,16 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     HttpClientModule,
     MatProgressSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    MatDividerModule
+    MatDividerModule,
+    FormsModule,
+    MatCheckboxModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
