@@ -1,0 +1,44 @@
+<div fxLayout="column" fxLayoutAlign="start center" fxFill>
+  <form (ngSubmit)="registerForm.checkValidity() && register()" #registerForm>
+    <mat-card>
+
+      <mat-card-title>Register</mat-card-title>
+      <mat-card-content>
+
+
+        <mat-form-field floatLabel="always">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" placeholder="Paul" name="username" [(ngModel)]="username" required>
+        </mat-form-field>
+
+        <mat-form-field floatLabel="always">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="*******" name="password" [(ngModel)]="password" required>
+        </mat-form-field>
+
+        <mat-form-field floatLabel="always">
+          <mat-label>Reenter Password</mat-label>
+          <input matInput type="password" placeholder="*******" name="password1" [(ngModel)]="password1" required>
+        </mat-form-field>
+
+        <mat-form-field floatLabel="always">
+          <mat-label>Mailaddress</mat-label>
+          <input matInput type="email" email placeholder="paul@example.org" name="mail" [(ngModel)]="mail" required>
+        </mat-form-field>
+
+        <mat-form-field floatLabel="always">
+          <mat-label>Reenter Mailaddress</mat-label>
+          <input matInput type="email" email placeholder="paul@example.org" name="mail1" [(ngModel)]="mail1" required>
+        </mat-form-field>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <div fxLayoutAlign="end center" fxLayout="row">
+          <button mat-flat-button color="secondary" type="button" routerLink="/login">Back</button>
+          <button mat-flat-button color="primary" type="submit">Register</button>
+        </div>
+      </mat-card-actions>
+
+    </mat-card>
+  </form>
+</div>

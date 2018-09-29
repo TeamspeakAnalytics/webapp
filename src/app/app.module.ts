@@ -28,6 +28,7 @@ import { CardServerStatusComponent } from './dashboard/card-server-status/card-s
 import { LoginComponent } from './login/login.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {FormsModule} from '@angular/forms';
     QuickAccessButtonComponent,
     MessageBoxComponent,
     CardServerStatusComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
