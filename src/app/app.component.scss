@@ -1,9 +1,23 @@
+@import "../styles";
+
 .sidenav-container {
   height: 100%;
 }
 
-.sidenav {
-  width: 200px;
+#toolbar {
+  background: white;
+  border-bottom: solid #E0E0E0 1px;
+  color: $gray-text;
+}
+
+#drawer-toolbar {
+  background: white;
+  color: $gray-text;
+}
+
+.menu-icon {
+  margin-right: 20px;
+  color: #CDCDCD;
 }
 
 .mat-toolbar.mat-primary {
@@ -12,15 +26,44 @@
 }
 
 #content-wrapper {
-  padding: 4px;
+  padding: 8px;
+  overflow: auto;
+  //height: calc(100% - 64px);
+  height: 100%;
+  margin: 0;
+  min-height: calc(100% - 64px);
+  width: 100%;
+  background: white;
+}
+
+#wrapper {
   overflow: auto;
   height: calc(100% - 64px);
   margin: 0;
   min-height: calc(100% - 64px);
-  min-width: 100%;
-  width: 100%;
+  background: white;
+
+  app-quick-access {
+    height: 100%;
+  }
 }
 
 .active {
   font-weight: bold;
+  color: $active-color;
+  mat-icon {
+    color: $active-color;
+  }
+}
+
+#search {
+  width: 720px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.nav-list {
+  height: calc(100% - 64px);
 }
