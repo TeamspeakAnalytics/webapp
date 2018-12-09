@@ -4,9 +4,32 @@ $active-color: #4285F4;
 $gray-text: #757575;
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
 
 * {
   box-sizing: border-box;
+}
+
+snack-bar-container {
+  color: white !important;
+
+  &.success {
+    background: green;
+  }
+  &.warning {
+    background: orange;
+  }
+  &.error {
+    background: red;
+  }
+  &.information {
+    background: $active-color;
+  }
 }

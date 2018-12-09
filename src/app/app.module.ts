@@ -29,6 +29,8 @@ import { LoginComponent } from './login/login.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { BaseCardComponent } from './statistics/base-card/base-card.component';
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { RegisterComponent } from './register/register.component';
     MessageBoxComponent,
     CardServerStatusComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    StatisticsComponent,
+    BaseCardComponent
   ],
   imports: [
     BrowserModule,

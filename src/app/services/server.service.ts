@@ -1,28 +1,28 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {GetServerListInfo} from '../models/getServerListInfo';
 import {environment} from '../../environments/environment';
 import {GetClientInfo} from '../models/getClientInfo';
 import {catchError} from 'rxjs/operators';
+import {ApiBase} from '../models/api-base';
+import {NotificationService} from './notification.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServerService {
+export class ServerService extends ApiBase {
 
-  private _isAvailable: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
-  isAvailable: Observable<boolean> = this._isAvailable.asObservable();
-
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private notify: NotificationService) {
+    super('TS Service', notify);
   }
 
   getServerInfo(): Observable<GetServerListInfo> {
     return this.http.get<GetServerListInfo>(environment.apiBase.concat(environment.apiServerPath) + '/serverinfo')
       .pipe(
         catchError((err: HttpErrorResponse) => {
-          this._isAvailable.next(false);
-          return null;
+          this.handleHttpErrorResponse(err);
+          return of(null);
         })
       );
   }
@@ -31,9 +31,10 @@ export class ServerService {
     return this.http.get<GetClientInfo>(environment.apiBase.concat(environment.apiServerPath) + '/clients')
       .pipe(
         catchError((err: HttpErrorResponse) => {
-          this._isAvailable.next(false);
-          return null;
+          this.handleHttpErrorResponse(err);
+          return of(null);
         })
       );
   }
+
 }
