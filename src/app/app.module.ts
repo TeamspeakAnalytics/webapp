@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
+  MatBottomSheetModule,
   MatButtonModule,
   MatCardModule, MatCheckboxModule, MatDividerModule,
   MatFormFieldModule,
@@ -31,6 +32,7 @@ import {FormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { BaseCardComponent } from './statistics/base-card/base-card.component';
+import { AddCardBottomSheetComponent } from './statistics/add-card-bottom-sheet/add-card-bottom-sheet.component';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { BaseCardComponent } from './statistics/base-card/base-card.component';
     LoginComponent,
     RegisterComponent,
     StatisticsComponent,
-    BaseCardComponent
+    BaseCardComponent,
+    AddCardBottomSheetComponent
   ],
   imports: [
     BrowserModule,
@@ -69,10 +72,12 @@ import { BaseCardComponent } from './statistics/base-card/base-card.component';
     MatDividerModule,
     FormsModule,
     MatCheckboxModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatBottomSheetModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddCardBottomSheetComponent]
 })
 // @ts-ignore
 export class AppModule {

@@ -1,4 +1,11 @@
 <div id="wrapper" fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center">
-  <app-base-card></app-base-card>
+  <app-base-card title="Example Card" [cardMenuItems]="cardMenuItems">
+    This is my example content. I swear its only text.
+    This is my example content. I swear its only text.
+    This is my example content. I swear its only text.
+  </app-base-card>
 </div>
 
+<div id="button-container">
+  <button mat-mini-fab (click)="addCard()"><mat-icon>add</mat-icon></button>
+</div>

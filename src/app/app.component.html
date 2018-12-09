@@ -40,7 +40,7 @@
         <span>Teamspeak Analytics</span>
       </div>
 
-      <div id="search">
+      <div id="search" *ngIf="(isHandset$ | async) ? false : true">
         <mat-form-field [floatLabel]="'never'">
           <input type="text" matInput placeholder="Search User">
         </mat-form-field>
@@ -58,7 +58,7 @@
     </mat-toolbar>
     <!-- CONTENT -->
     <div id="wrapper" fxLayout="row" fxLayoutAlign="start start">
-      <app-quick-access [items]="quickAccessItems"></app-quick-access>
+      <app-quick-access [items]="quickAccessItems" *ngIf="(isHandset$ | async) ? false : true"></app-quick-access>
       <div id="content-wrapper">
         <router-outlet></router-outlet>
       </div>
