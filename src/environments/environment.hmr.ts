@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  hmr: false,
+  hmr: true,
   apiBase: 'http://localhost:5001/api',
   apiServerPath: '/server'
 };
