@@ -6,8 +6,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
+  MatBottomSheetModule,
   MatButtonModule,
-  MatCardModule, MatCheckboxModule, MatDividerModule,
+  MatCardModule, MatCheckboxModule, MatDialogModule, MatDividerModule,
   MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
@@ -15,7 +16,7 @@ import {
   MatListModule,
   MatMenuModule,
   MatProgressSpinnerModule,
-  MatSidenavModule, MatSnackBarModule, MatTableModule,
+  MatSidenavModule, MatSnackBarModule, MatStepperModule, MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
@@ -29,6 +30,10 @@ import { LoginComponent } from './login/login.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { BaseCardComponent } from './statistics/base-card/base-card.component';
+import { AddCardBottomSheetComponent } from './statistics/add-card-bottom-sheet/add-card-bottom-sheet.component';
+import { AddServerGroupStatsComponent } from './statistics/add-server-group-stats/add-server-group-stats.component';
 
 
 @NgModule({
@@ -41,7 +46,11 @@ import { RegisterComponent } from './register/register.component';
     MessageBoxComponent,
     CardServerStatusComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    StatisticsComponent,
+    BaseCardComponent,
+    AddCardBottomSheetComponent,
+    AddServerGroupStatsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,10 +74,14 @@ import { RegisterComponent } from './register/register.component';
     MatDividerModule,
     FormsModule,
     MatCheckboxModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatBottomSheetModule,
+    MatDialogModule,
+    MatStepperModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddCardBottomSheetComponent, AddServerGroupStatsComponent]
 })
 // @ts-ignore
 export class AppModule {

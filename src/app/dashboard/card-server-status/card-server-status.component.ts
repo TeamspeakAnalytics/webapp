@@ -26,6 +26,9 @@ export class CardServerStatusComponent implements OnInit {
 
   ngOnInit() {
     this.serverService.getServerInfo().subscribe(info => {
+      if (!info) {
+        return;
+      }
       this.serverInfo = info;
       const keys = Object.keys(info);
       keys.forEach(key => {
