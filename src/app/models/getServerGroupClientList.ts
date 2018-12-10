@@ -9,13 +9,8 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-import {ClientType} from './getClientDetailedInfo';
 
 
-export interface GetClientInfo {
-  id?: number;
-  channelId?: number;
-  databaseId?: number;
-  nickName?: string;
-  type?: ClientType;
+export interface GetServerGroupClientList {
+  clientDatabaseId?: number;
 }

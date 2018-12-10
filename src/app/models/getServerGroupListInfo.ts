@@ -9,13 +9,23 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-import {ClientType} from './getClientDetailedInfo';
 
 
-export interface GetClientInfo {
+export interface GetServerGroupListInfo {
   id?: number;
-  channelId?: number;
-  databaseId?: number;
-  nickName?: string;
-  type?: ClientType;
+  name?: string;
+  serverGroupType?: ServerGroupType;
+  iconId?: number;
+  saveDb?: number;
+  sortId?: number;
+  namingMode?: number;
+  neededModifyPower?: number;
+  neededMemberAddPower?: number;
+  neededMemberRemovePower?: number;
+}
+
+export enum ServerGroupType {
+  NUMBER_0 = 0,
+  NUMBER_1 = 1,
+  NUMBER_2 = 2
 }
