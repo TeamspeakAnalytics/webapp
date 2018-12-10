@@ -5,8 +5,7 @@
 export const environment = {
   production: false,
   hmr: true,
-  apiBase: 'http://localhost:5001/api',
-  apiServerPath: '/server'
+  apiBase: 'http://192.168.56.102/api'
 };
 
 /*

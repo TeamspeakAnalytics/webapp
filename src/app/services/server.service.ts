@@ -18,7 +18,7 @@ export class ServerService extends ApiBase {
   }
 
   getServerInfo(): Observable<GetServerListInfo> {
-    return this.http.get<GetServerListInfo>(environment.apiBase.concat(environment.apiServerPath) + '/serverinfo')
+    return this.http.get<GetServerListInfo>(environment.apiBase + '/server/serverinfo')
       .pipe(
         catchError((err: HttpErrorResponse) => {
           this.handleHttpErrorResponse(err);
@@ -28,7 +28,7 @@ export class ServerService extends ApiBase {
   }
 
   getServerClients(): Observable<GetClientInfo> {
-    return this.http.get<GetClientInfo>(environment.apiBase.concat(environment.apiServerPath) + '/clients')
+    return this.http.get<GetClientInfo>(environment.apiBase + '/server/clients')
       .pipe(
         catchError((err: HttpErrorResponse) => {
           this.handleHttpErrorResponse(err);

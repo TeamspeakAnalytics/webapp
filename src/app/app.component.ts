@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import {map} from 'rxjs/operators';
 import {QuickAccessItem} from './quick-access/quick-access.component';
+import {AuthService} from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,11 @@ export class AppComponent {
     {title: 'Statistics', icon: 'show_chart', routerLink: '/stats'}
   ];
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  get userIconLink(): string {
+    return this.authService.isSignedIn() ? '/profile' : '/login';
+  }
+
+  constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService) {
+    this.authService.getSessionRoles();
   }
 }

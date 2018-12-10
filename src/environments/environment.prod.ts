@@ -1,6 +1,5 @@
 export const environment = {
   production: true,
   hmr: false,
-  apiBase: '/api',
-  apiServerPath: '/server'
+  apiBase: '/api'
 };

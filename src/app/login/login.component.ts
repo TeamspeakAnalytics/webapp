@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {MatSnackBar} from '@angular/material';
+import {AuthService} from '../services/auth.service';
+import {Router} from '@angular/router';
+import {NotificationService} from '../services/notification.service';
 
 @Component({
   selector: 'app-login',
@@ -12,15 +14,20 @@ export class LoginComponent implements OnInit {
   password: string;
   stay = true;
 
-  constructor(private snackBar: MatSnackBar) {
+  constructor(private authService: AuthService, private router: Router, private notify: NotificationService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   login(): void {
-    this.snackBar.open('User: ' + this.username + ' Pass: ' + this.password + ' Stay: ' + this.stay, null, {
-      duration: 2000
+    this.authService.login(this.username, this.password, this.stay).subscribe(signedIn => {
+      if (signedIn) {
+        this.router.navigate(['/dashboard']);
+        this.notify.success('Login successful.');
+      } else {
+        this.notify.error('Could not sign in.');
+      }
     });
   }
 

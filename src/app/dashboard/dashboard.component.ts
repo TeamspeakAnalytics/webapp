@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
     serverService.isAvailable.subscribe(isAvailable => this.serviceIsAvailable = isAvailable);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

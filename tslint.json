@@ -3,6 +3,7 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    "typedef": [true, "call-signature"],
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
