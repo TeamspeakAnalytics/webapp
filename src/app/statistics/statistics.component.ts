@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {CardMenuItem} from './base-card/base-card.component';
-import {MatBottomSheet} from '@angular/material';
-import {AddCardBottomSheetComponent} from './add-card-bottom-sheet/add-card-bottom-sheet.component';
+import {MatBottomSheet, MatDialog} from '@angular/material';
+import {AddCardBottomSheetComponent, AddCardBottomSheetResults} from './add-card-bottom-sheet/add-card-bottom-sheet.component';
+import {AddServerGroupStatsComponent} from './add-server-group-stats/add-server-group-stats.component';
 
 @Component({
   selector: 'app-statistics',
@@ -15,7 +16,7 @@ export class StatisticsComponent implements OnInit {
     {text: 'Edit', method: this.example, icon: 'edit'}
   ];
 
-  constructor(private bottomSheet: MatBottomSheet) {
+  constructor(private bottomSheet: MatBottomSheet, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -26,7 +27,12 @@ export class StatisticsComponent implements OnInit {
   }
 
   addCard(): void {
-    this.bottomSheet.open(AddCardBottomSheetComponent);
+    const bottomSheetRef = this.bottomSheet.open(AddCardBottomSheetComponent);
+    bottomSheetRef.afterDismissed().subscribe((result: AddCardBottomSheetResults) => {
+      if (result === AddCardBottomSheetResults.ServerGroupStats) {
+        this.dialog.open(AddServerGroupStatsComponent);
+      }
+    });
   }
 
 }

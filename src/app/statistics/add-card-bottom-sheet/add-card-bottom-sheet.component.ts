@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MatBottomSheetRef} from '@angular/material';
+
+export enum AddCardBottomSheetResults {
+  ServerGroupStats,
+  ServerStats
+}
 
 @Component({
   selector: 'app-add-card-bottom-sheet',
@@ -7,9 +13,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCardBottomSheetComponent implements OnInit {
 
-  constructor() { }
+  results = AddCardBottomSheetResults;
+
+  constructor(private bottomSheetRef: MatBottomSheetRef<AddCardBottomSheetComponent>) {
+  }
 
   ngOnInit() {
+  }
+
+  close(result: AddCardBottomSheetResults): void {
+    this.bottomSheetRef.dismiss(result);
   }
 
 }

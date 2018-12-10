@@ -8,7 +8,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {
   MatBottomSheetModule,
   MatButtonModule,
-  MatCardModule, MatCheckboxModule, MatDividerModule,
+  MatCardModule, MatCheckboxModule, MatDialogModule, MatDividerModule,
   MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
@@ -16,7 +16,7 @@ import {
   MatListModule,
   MatMenuModule,
   MatProgressSpinnerModule,
-  MatSidenavModule, MatSnackBarModule, MatTableModule,
+  MatSidenavModule, MatSnackBarModule, MatStepperModule, MatTableModule,
   MatToolbarModule
 } from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
@@ -33,6 +33,7 @@ import { RegisterComponent } from './register/register.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { BaseCardComponent } from './statistics/base-card/base-card.component';
 import { AddCardBottomSheetComponent } from './statistics/add-card-bottom-sheet/add-card-bottom-sheet.component';
+import { AddServerGroupStatsComponent } from './statistics/add-server-group-stats/add-server-group-stats.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { AddCardBottomSheetComponent } from './statistics/add-card-bottom-sheet/
     RegisterComponent,
     StatisticsComponent,
     BaseCardComponent,
-    AddCardBottomSheetComponent
+    AddCardBottomSheetComponent,
+    AddServerGroupStatsComponent
   ],
   imports: [
     BrowserModule,
@@ -73,11 +75,13 @@ import { AddCardBottomSheetComponent } from './statistics/add-card-bottom-sheet/
     FormsModule,
     MatCheckboxModule,
     MatSnackBarModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatDialogModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [AddCardBottomSheetComponent]
+  entryComponents: [AddCardBottomSheetComponent, AddServerGroupStatsComponent]
 })
 // @ts-ignore
 export class AppModule {
