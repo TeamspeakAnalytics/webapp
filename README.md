@@ -1,5 +1,5 @@
 # Webapp
-[![Build Status](https://travis-ci.org/TeamspeakAnalytics/webapp.svg?branch=develop)](https://travis-ci.org/TeamspeakAnalytics/webapp)
+![NPM CI](https://github.com/TeamspeakAnalytics/webapp/workflows/NPM%20CI/badge.svg)
 
 This is the Angular6 frontend for the TeamspeakAnalytics tool.
 
