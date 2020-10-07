@@ -27,7 +27,7 @@
     "@angularclass/hmr": "^3.0.0",
     "core-js": "^2.5.4",
     "jwt-decode": "^3.0.0",
-    "moment": "^2.29.0",
+    "moment": "^2.29.1",
     "rxjs": "^6.6.3",
     "tslib": "^2.0.2",
     "zone.js": "~0.8.29"
